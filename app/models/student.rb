@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     if name == ""
       self.all
     else
-      self.all.select{|student| student.name == name}
+      self.all.select{|student| student.name =~ /#{name}/i}
     end
   end
 end
