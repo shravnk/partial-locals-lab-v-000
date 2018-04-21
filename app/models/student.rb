@@ -15,6 +15,7 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(name)
+    binding.pry
     self.all.select{|student| student.name == name}
   end
 end
